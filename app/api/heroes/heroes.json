@@ -1,0 +1,52 @@
+[
+    {
+        "id": 11,
+        "name": "Mr. Nice",
+        "ranking": 5
+    },
+    {
+        "id": 12,
+        "name": "Narco",
+        "ranking": 3
+    },
+    {
+        "id": 13,
+        "name": "Bombasto",
+        "ranking": 4
+    },
+    {
+        "id": 14,
+        "name": "Celeritas",
+        "ranking": 1
+    },
+    {
+        "id": 15,
+        "name": "Magneta",
+        "ranking": 2
+    },
+    {
+        "id": 16,
+        "name": "RubberMan",
+        "ranking": 4
+    },
+    {
+        "id": 17,
+        "name": "Dynama",
+        "ranking": 3.5
+    },
+    {
+        "id": 18,
+        "name": "Dr IQ",
+        "ranking": 5
+    },
+    {
+        "id": 19,
+        "name": "Magma",
+        "ranking": 1.5
+    },
+    {
+        "id": 20,
+        "name": "Tornado",
+        "ranking": 2
+    }
+]

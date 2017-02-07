@@ -14,6 +14,7 @@ export class HeroesComponent implements OnInit {
     heroes: Hero[];
     filter: string;
     selectedHero: Hero;
+    errorMessage: string;
 
     constructor(private heroService: HeroService) { }
 
@@ -23,9 +24,10 @@ export class HeroesComponent implements OnInit {
 
     getHeroes(): void {
         this.heroService.getHeroes()
-            .then(heroes => {
-                this.heroes = heroes
-            });
+            .subscribe(
+                heroes => this.heroes = heroes,
+                error => this.errorMessage = <any>error
+            );
     }
 
     onSelect(hero: Hero): void {
