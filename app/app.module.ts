@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HeroService } from './heroes/hero.service';
-import { HeroesComponent } from './heroes/hero.component';
-import { HeroDetailComponent } from './heroes/hero-detail.component';
-
+import { HeroService } from './heroes/hero/hero.service';
+import { HeroesComponent } from './heroes/hero/hero.component';
+import { HeroDetailComponent } from './heroes/hero-detail/hero-detail.component';
+import { HeroFilterPipe } from './heroes/hero/hero-filter.pipe';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
@@ -24,7 +24,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         component: DashboardComponent
       },
       {
-        path: '',
+        path: '**',
         redirectTo: '/dashboard',
         pathMatch: 'full'
       },
@@ -34,7 +34,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     DashboardComponent,
     HeroDetailComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroFilterPipe,
   ],
   providers: [
     HeroService

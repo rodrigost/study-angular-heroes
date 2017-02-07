@@ -1,0 +1,15 @@
+<nav>
+    <h2>My Heroes</h2>
+
+    <label>Search: </label> 
+    <input [(ngModel)]="filter" placeholder="search" />
+
+    <ul class="heroes">
+        <li *ngFor="let hero of heroes | heroFilter: filter" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </li>
+    </ul>
+</nav>
+<article>
+    <my-hero-detail [hero]="selectedHero"></my-hero-detail>
+</article>

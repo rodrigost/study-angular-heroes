@@ -11,10 +11,7 @@
     "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
     "test-once": "tsc && karma start karma.conf.js --single-run",
     "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "html": "copyfiles app/**/*.html app/**/*.css css/** dist/",
-    "clean": "rmdir -sq dist",
-    "init" : "concurrently \"npm clean\" \"npm run start\" \"npm html\""
+    "tsc:w": "tsc -w"
   },
   "keywords": [],
   "author": "",
