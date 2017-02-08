@@ -9,7 +9,7 @@ import { Hero } from './../shared/hero';
 
 @Injectable()
 export class HeroService {
-    private _heroServiceUrl = './app/api/heroes/heroes.json';
+    private _heroServiceUrl = './api/heroes/heroes.json';
 
     constructor(private _http: Http) { }
 
@@ -20,6 +20,19 @@ export class HeroService {
             .catch(this.handleError);
         return heroes;
     }
+
+    getHeroById(heroId: number): Observable<Hero> {
+        var result = this._http.get(this._heroServiceUrl)
+            .map((response: Response) => {
+                var data = <Hero[]>response.json();
+                var hero = data.find(hero => hero.id == heroId);
+                return hero;
+            })
+            .do(data => console.log('ByID: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+        return result;
+    }
+
 
     private handleError(error: Response) {
         console.error(error);

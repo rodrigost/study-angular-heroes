@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Hero } from './../shared/hero';
 import { HeroService } from './hero.service';
 
@@ -16,14 +16,15 @@ export class HeroesComponent implements OnInit {
     selectedHero: Hero;
     errorMessage: string;
 
-    constructor(private heroService: HeroService) { }
+    constructor(private _heroService: HeroService, private _router: Router) { }
 
     ngOnInit(): void {
         this.getHeroes();
     }
 
     getHeroes(): void {
-        this.heroService.getHeroes()
+        this._heroService
+            .getHeroes()
             .subscribe(
                 heroes => this.heroes = heroes,
                 error => this.errorMessage = <any>error
@@ -32,6 +33,7 @@ export class HeroesComponent implements OnInit {
 
     onSelect(hero: Hero): void {
         this.selectedHero = hero;
+        this._router.navigate(['/hero', hero.id]);
     }
 }
 

@@ -1,13 +1,15 @@
-<div *ngIf="hero">
-    <h2>{{hero.name}} details!</h2>
-    <div><label>id: </label>{{hero.id}}</div>
-    <div>
-        <label>name: </label>
-        <input [(ngModel)]="hero.name" placeholder="name" />
+<div>
+    <div *ngIf="hero">
+        <h2>{{hero.name}} details!</h2>
+        <div><label>id: </label>{{hero.id}}</div>
+        <div>
+            <label>name: </label>
+            <input [(ngModel)]="hero.name" placeholder="name" />
+        </div>
+        <div>
+            <Label>Ranking: </Label>
+            <ai-ranking [ranking]='hero.ranking' (rankingClicked)='onRankingClicked($event)'></ai-ranking>
+        </div>
     </div>
-    <div>
-        <Label>Ranking: </Label>
-        <ai-ranking [ranking]='hero.ranking'
-                    (rankingClicked)='onRankingClicked($event)'></ai-ranking>
-    </div>
+    <button [routerLink]="['/heroes']">Go back</button>
 </div>

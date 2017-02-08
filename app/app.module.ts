@@ -23,6 +23,10 @@ import { RankingComponent } from './heroes/shared/ranking.component';
         component: HeroesComponent
       },
       {
+        path: 'hero/:id',
+        component: HeroDetailComponent
+      },
+      {
         path: 'dashboard',
         component: DashboardComponent
       },
